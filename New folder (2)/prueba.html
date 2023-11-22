@@ -1,0 +1,59 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>selects dependientes</title>
+  <style>
+    .alternativa {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form action="#">
+    <select name="grado" id="grado">
+      <option value="">Seleccionar grado</option>
+      <option value="primaria">Primaria</option>
+      <option value="ESO">ESO</option>
+    </select>
+    <p id="cursos">
+      Selecciona el grado de formación
+    </p>
+    <p>
+      <button>Enviar</button>
+    </p>
+  </form>
+
+  <div class="alternativa" id="alternativa-primaria">
+    <select name="curso">
+      <option value="1">Primero</option>
+      <option value="2">Segundo</option>
+      <option value="3">Tercero</option>
+      <option value="4">Cuarto</option>
+      <option value="5">Quinto</option>
+      <option value="6">Sexto</option>
+    </select>
+  </div>
+  <div class="alternativa" id="alternativa-ESO">
+    <select name="curso">
+      <option value="1eso">Primero ESO</option>
+      <option value="2eso">Segundo ESO</option>
+      <option value="3eso">Tercero ESO</option>
+      <option value="4eso">Cuarto ESO</option>
+    </select>
+  </div>
+
+  <script>
+    document.getElementById('grado').addEventListener('change', function(e) {
+      console.log(this, this.value);
+      if(this.value != '') {
+        document.getElementById('cursos').innerHTML = document.getElementById(`alternativa-${this.value}`).innerHTML;
+      } else {
+        document.getElementById('cursos').innerText = 'Selecciona un grado de formación'
+      }
+    });
+  </script>
+</body>
+</html>
