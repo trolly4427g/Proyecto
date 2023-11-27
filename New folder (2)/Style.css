@@ -3,12 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
-    display: flex;
-    justify-content: center;
+body {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height:150vh;
 }
-#area{
-    width: 40em;
+/* TAMAÑO DEL AREA */
+#area {
+  width: 45em;
 }
 .titulo {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -16,4 +19,92 @@ body{
   font-weight: 500;
   padding: 1em;
   padding-left: 0;
+}
+/* ORGANIZACION DEL FORMULARIO */
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+input,
+select,button {
+  border: solid 1px;
+  padding: 0.75em;
+  border-color: lightgray;
+  border-radius: 5px;
+  font-size: 1em;
+}
+label,
+select {
+  font-size: 1em;
+  margin: 1em;
+  margin-left: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+}
+/* TAMAÑO DEL FORMULARIO DE FECHA */
+input[type="date"] {
+  width: 20em;
+}
+/* INPUT DEL HORARIO */
+.horas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+input[type="time"],
+.hora {
+  margin: 10px;
+  margin-left: 0;
+  margin-top: 15px;
+}
+input[type="time"] {
+  margin-top: 0;
+  margin-left: 0;
+}
+/* ORGANIZACION DE INPUT DE TRANSPORTE */
+.radio {
+  margin: 5px;
+  margin-left: 10px;
+  position: relative;
+}
+input[type="radio"] {
+  width: 25px;
+  height: 25px;
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  padding: 0;
+  position: relative;
+}
+input[type="radio"]:checked {
+  content: "";
+  border: 6px solid;
+  border-radius: 50%;
+  outline: none;
+  border-color: blue;
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  
+}
+.radio label {
+  font-size: 1.2em;
+  font-weight: lighter;
+  position: absolute;
+  bottom: -15px;
+  left: 50px;
+}
+.generar{
+    margin-top: 2em;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    font-weight: bold;
+    margin-left: 83%;
+}
+/* ORGANIZACION DEL APARTADO DE PUESTOS Y NOMBRES */
+.persona{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }

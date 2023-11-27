@@ -1,37 +1,195 @@
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Document</title>
-            <link rel="stylesheet" href="style.css" />
-        </head>
-        <body>
-            <section id="area">
-            <h1 class="titulo">Formulario</h1>
-            <hr />
-            <form action="">
-                <label for="fecha">Fecha de Solicitud</label>
-                <input type="date" name="fecha" id="" />
-                <label for="Dependencia">Dependencia</label>
-                <input type="text" name="Dependencia" id="" />
-                <label for="Transporte">Transporte</label>
-                <input type="radio" name="1" id="" />
-                <label for="">Institucional</label>
-                <input type="radio" name="1" id="" />
-                <label for="">Particular</label> 
-                <label for="">Motivo de visita</label>
-                <input type="text" name="" id="">
-                <label for="">Lugar de partida</label>
-                <input type="text" name="" id="">
-                <label for="">Lugar de visita</label>
-                <input type="text" name="" id="">
-                <input type="time" name="" id="">
-                <input type="time" name="" id="">
-                <label for="cantidadp">Cuantas personas a solicitar?</label>
-                <select name="cantidadp" id="">
-                    <option value="0"></option>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/selectr.js"></script>
+  </head>
+  <body>
+    <section id="area">
+      <h1 class="titulo">Formulario</h1>
+      <hr />
+      <form action="" id="formulario">
+        <label for="fecha">Fecha de Solicitud</label>
+        <input type="date" name="fecha" id="" />
+        <label for="Dependencia">Dependencia</label>
+        <input type="text" name="Dependencia" id="" />
+        <!-- Este apartado es para la selección del transporte -->
+        <label for="Transporte">Transporte</label>
+        <div class="radio">
+          <input type="radio" name="1" id="elegida" />
+          <label for="">Institucional</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="1" id="elegida" />
+          <label for="">Particular</label>
+        </div>
+        <!-- INFORMACIONES A SOLICITAR MOTIVO LUGAR DE PARTIDA Y VISITA -->
+        <label for="">Motivo de visita</label>
+        <input type="text" name="" id="" />
+        <label for="">Lugar de partida</label>
+        <input type="text" name="" id="" />
+        <label for="">Lugar de visita</label>
+        <input type="text" name="" id="" />
+        <!-- HORA DE LLEGA Y SALIDA -->
+        <div class="horas">
+          <label for="" class="hora">Hora de llegada</label>
+          <label for="" class="hora">Hora de salida</label>
+          <input type="time" name="" id="" />
+          <input type="time" name="" id="" />
+        </div>
+        <!-- CANTIDAD DE PERSONAS QUE ESTARAN EN EL VIAJE -->
+        <label for="cantidadp">Cuantas personas a solicitar?</label>
+        <select name="cantidadp" id="cantidadp" onchange="cambio()">
+            <option value="0" selected disabled>Selecione una opción</option>
+            <option id="des" value="1">2</option>
+            <option id="des" value="2">3</option>
+            <option id="des" value="3">4</option>
+            <option id="des" value="4">Más de 4</option>
+          </option>
         </select>
+        <!-- PUESTOS QUE SE OCUPARAN -->
+        <div class="persona 1" style="display: none;" id="1">
+          <label for="puesto">Puesto 1</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <div class="persona 2" style="display: NONE;" id="2">
+          <label for="puesto">Puesto 2</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <div class="persona 3" style="display: NONE;" id="3">
+          <label for="puesto">Puesto 3</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <div class="persona 4" style="display: NONE;" id="4">
+          <label for="puesto">Puesto 4</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <div class="persona 5" style="display: none;" id="5">
+          <label for="puesto">Puesto 5</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <div class="persona 6" style="display: none;" id="6">
+          <label for="puesto">Puesto 6</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <div class="persona 7" style="display: none;" id="7">
+          <label for="puesto">Puesto 7</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <div class="persona 8" style="display: none;" id="8">
+          <label for="puesto">Puesto 8</label>
+          <select name="puesto" id="">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
+                Selecione un Puesto
+              </option>
+              <option value="1">Ejecutivo</option>
+              <option value="2">Directores</option>
+              <option value="3">Doctores</option>
+            </optgroup>
+          </select>
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" />
+          <label for="apellido">Apellidos</label>
+          <input type="text" name="apellido" />
+        </div>
+        <button class="generar" onclick="convpdf()">Generar PDF</button>
       </form>
     </section>
   </body>
