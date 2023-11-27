@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <script>
+        const selectElement = document.querySelector('#selectTab2Gestion');
+
+ 
+        selectElement.addEventListener('change', (event) => {
+   
+            const seleccionado = event.target.value;
+   
+   
+            if (seleccionado === 'alta') {
+     
+                console.log('Se ha elegido alta');
+   
+            }
+   
+            else if (seleccionado === 'baja') {
+      
+                console.log('Se ha elegido baja');
+   
+            }
+        });
+    </script>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h3>Formulario</h3>
+                <hr>
+                    <div class="col-md-6">
+                    
+                        <label for="fechasolicitud" class="form-label">Fecha de solicitud</label>
+                        <input type="date" class="form-control" id="fechasolicitud">
+                    
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Dependencia" class="form-label">Dependencia</label>
+                        <input type="text" class="form-control" id="Dependencia">
+                    </div>
+                    
+
+                <form id="form">
+                    <div class="row mb-3">
+                        <div class="col-md-2">
+                            <div>
+                                <label for="" class="form-label">Transporte</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="Transportei">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      Institucional
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="transportep" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                      Particular
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="motivov" class="form-label">Motivo de visita</label>
+                            <input type="text" class="form-control" id="motivov">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lugarp" class="form-label">Lugar de partida</label>
+                            <input type="text" class="form-control" id="lugarp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lugarv" class="form-label">Lugar de la visita</label>
+                            <input type="text" class="form-control" id="lugarv">
+                        </div>
+                                
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="salida" class="form-label">Hora de salida</label>
+                                <input type="time" class="form-control" id="salida">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="llegada" class="form-label">Hora de llegada</label>
+                                <input type="time" class="form-control" id="llegada">
+                            </div>
+                        </div>
+
+                    
+                     <div class="col-md-10">
+                        <div>
+                            <label for ="Cantidadpl" class="form-label">Cuantas personas a solicitar?</label>
+                            <form name =cp>
+                                <select name="Cantidadp" id="Cantidadps" onchange="myFunction()">
+                                <option value="0">Seleccione una opcion</option>
+                                <option value="1"></option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="Mas de 4">Mas de 4</option>
+
+                                
+                                </select>
+                            <form>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="Puesto" class="form-label">Puesto</label>
+                    <select class="form-select" id="Puesto">
+                        <option value="">Seleccione un Puesto</option>
+                        <option value="Ejecutivo">Ejecutivo</option>
+                        <option value="Directores">Directores</option>
+                        <option value="Doctores">Doctores</option>
+                    </select>
+                </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="apellido" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellido">
+                        </div>
+                    </div>
+
+                      
+                    
+                    <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+   
+    
+</body>
+
+</html>
