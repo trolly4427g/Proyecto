@@ -1,0 +1,16 @@
+ <input type="checkbox" name="desayuno" id="checkDesayuno" onclick="activar('rellenarDesayuno')" />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno" readonly />
+          
+          <div class="radio modificacion">
+            <input type="checkbox" name="comida" id="checkComida" onclick="activar('rellenarComida')" />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida" readonly />
+          
+          <div class="radio modificacion">
+            <input type="checkbox" name="cena" id="checkCena" onclick="activar('rellenarCena')" />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena" readonly />

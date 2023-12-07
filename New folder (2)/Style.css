@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height:150vh;
+  height: 150vh;
 }
 /* TAMAÑO DEL AREA */
 #area {
@@ -28,7 +28,8 @@ form {
   justify-content: center;
 }
 input,
-select,button {
+select,
+button {
   border: solid 1px;
   padding: 0.75em;
   border-color: lightgray;
@@ -86,7 +87,6 @@ input[type="radio"]:checked {
   border-color: blue;
   background-color: rgb(255, 255, 255);
   display: inline-block;
-  
 }
 .radio label {
   font-size: 1.2em;
@@ -95,16 +95,53 @@ input[type="radio"]:checked {
   bottom: -15px;
   left: 50px;
 }
-.generar{
-    margin-top: 2em;
-    background-color: rgb(0, 102, 255);
-    color: white;
-    font-weight: bold;
-    margin-left: 83%;
+.generar {
+  margin-top: 2em;
+  background-color: rgb(0, 102, 255);
+  color: white;
+  font-weight: bold;
+  margin-left: 83%;
 }
 /* ORGANIZACION DEL APARTADO DE PUESTOS Y NOMBRES */
-.persona{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+.persona {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.persona label {
+  font-size: 1.3em;
+}
+/* ORGANIZACIÓN DE DESAYUNO, COMIDA, CENA Y TOTAL */
+.modificacion {
+  margin: 0;
+  margin-top: 1em;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  display: flex;
+
+  flex-direction: row;
+  align-items: left;
+  justify-items: center;
+}
+.modificacion label {
+  margin: 0;
+  position: static;
+  font-size: 1.36em;
+  margin-left: 0.5em;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 0;
+  position: relative;
+}
+input[type="checkbox"]:checked {
+  content: "";
+  border: 6px solid;
+  outline: none;
+  border-color: blue;
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
 }

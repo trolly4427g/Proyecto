@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
     <script src="js/selectr.js"></script>
   </head>
   <body>
@@ -45,149 +44,603 @@
         <!-- CANTIDAD DE PERSONAS QUE ESTARAN EN EL VIAJE -->
         <label for="cantidadp">Cuantas personas a solicitar?</label>
         <select name="cantidadp" id="cantidadp" onchange="cambio()">
-            <option value="0" selected disabled>Selecione una opción</option>
-            <option id="des" value="1">2</option>
-            <option id="des" value="2">3</option>
-            <option id="des" value="3">4</option>
-            <option id="des" value="4">Más de 4</option>
-          </option>
+          <option value="0" selected disabled>Selecione una opción</option>
+          <option id="des" value="1">2</option>
+          <option id="des" value="2">3</option>
+          <option id="des" value="3">4</option>
+          <option id="des" value="4">Más de 4</option>
         </select>
         <!-- PUESTOS QUE SE OCUPARAN -->
-        <div class="persona 1" style="display: none;" id="1">
+        <div class="persona 1" style="display: none" id="1">
           <label for="puesto">Puesto 1</label>
-          <select name="puesto" id="">
+          <select name="puesto" onchange="dinero('1')" id="ocupacion">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno"
+              onclick="activar('rellenarDesayuno')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida"
+              onclick="activar('rellenarComida')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena"
+              onclick="activar('rellenarCena')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena" readonly />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento"
+              onclick="activar('rellenarAlojamiento')"
+              checked
+            />
+            <label for="Alojamiento" id="">Alojamiento</label>
+          </div>
+          <input
+            type="text"
+            name="Alojamiento"
+            id="rellenarAlojamiento"
+            readonly>
+          
+          <div class="radio modificacion" >
+            <label for="">Total:</label>
+          </div>
+          <input type="text" name="" id="resultado">
         </div>
-        <div class="persona 2" style="display: NONE;" id="2">
+
+        <!--PERSONA 2  -->
+
+        <div class="persona 2" style="display: NONE" id="2">
           <label for="puesto">Puesto 2</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno2"
+              onclick="activar('rellenarDesayuno2')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno2" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida2"
+              onclick="activar('rellenarComida2')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida2" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena2"
+              onclick="activar('rellenarCena2')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena2" readonly />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento2"
+              onclick="activar('rellenarAlojamiento2')"
+              checked
+            />
+            <label for="Alojamiento2" id="">Alojamiento2</label>
+          </div>
+          <input
+            type="text"
+            name="Alojamiento"
+            id="rellenarAlojamiento2"
+            readonly
+          />
         </div>
-        <div class="persona 3" style="display: NONE;" id="3">
+
+        <!--PERSONA 3  -->
+
+        <div class="persona 3" style="display: NONE" id="3">
           <label for="puesto">Puesto 3</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno3"
+              onclick="activar('rellenarDesayuno3')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno3" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida3"
+              onclick="activar('rellenarComida3')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida3" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena3"
+              onclick="activar('rellenarCena3')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena3" readonly />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento3"
+              onclick="activar('rellenarAlojamiento3')"
+              checked
+            />
+            <label for="Alojamiento3" id="">Alojamiento</label>
+          </div>
+          <input
+            type="text"
+            name="Alojamiento"
+            id="rellenarAlojamiento3"
+            readonly
+          />
         </div>
-        <div class="persona 4" style="display: NONE;" id="4">
+
+        <!-- PERSONA 4 -->
+
+        <div class="persona 4" style="display: NONE" id="4">
           <label for="puesto">Puesto 4</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno4"
+              onclick="activar('rellenarDesayuno4')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno4" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida4"
+              onclick="activar('rellenarComida4')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida4" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena4"
+              onclick="activar('rellenarCena4')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena4" readonly />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento4"
+              onclick="activar('rellenarAlojamiento4')"
+              checked
+            />
+            <label for="Alojamiento" id="">Alojamiento</label>
+          </div>
+          <input
+            type="text"
+            name="Alojamiento"
+            id="rellenarAlojamiento4"
+            readonly
+          />
         </div>
-        <div class="persona 5" style="display: none;" id="5">
+
+        <!-- SECCION 5 -->
+
+        <div class="persona 5" style="display: none" id="5">
           <label for="puesto">Puesto 5</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno5"
+              onclick="activar('rellenarDesayuno5')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno5" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida5"
+              onclick="activar('rellenarComida5')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida5" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena5"
+              onclick="activar('rellenarCena5')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena5" readonly />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento5"
+              onclick="activar('rellenarAlojamiento5')"
+              checked
+            />
+            <label for="cena" id="">Alojamiento</label>
+          </div>
+          <input type="text" name="cena" id="rellenarAlojamiento5" readonly />
         </div>
-        <div class="persona 6" style="display: none;" id="6">
+
+        <!-- SECCION 6 -->
+
+        <div class="persona 6" style="display: none" id="6">
           <label for="puesto">Puesto 6</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno6"
+              onclick="activar('rellenarDesayuno6')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno6" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida6"
+              onclick="activar('rellenarComida6')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida6" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena6"
+              onclick="activar('rellenarCena6')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena6" readonly />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento6"
+              onclick="activar('rellenarAlojamiento6')"
+              checked
+            />
+            <label for="cena" id="">Alojamiento</label>
+          </div>
+          <input type="text" name="cena" id="rellenarAlojamiento6" readonly />
         </div>
-        <div class="persona 7" style="display: none;" id="7">
+
+        <!-- SECCION 7 -->
+
+        <div class="persona 7" style="display: none" id="7">
           <label for="puesto">Puesto 7</label>
-          <select name="puesto" id="">
-            <optgroup label="Seleccione un Puesto">
-              <option value="0" selected disabled hidden>
+          <select name="puesto" >
+            <optgroup label="Seleccione un Puesto" >
+              <option value="0" selected disabled hidden >
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno7"
+              onclick="activar('rellenarDesayuno7')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno7" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida7"
+              onclick="activar('rellenarComida7')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida7" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena7"
+              onclick="activar('rellenarCena7')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena7" readonly />
+          
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento7"
+              onclick="activar('rellenarAlojamiento7')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarAlojamiento7" readonly />
+          
         </div>
-        <div class="persona 8" style="display: none;" id="8">
+
+        <!-- SECCION 8 -->
+
+        <div class="persona 8" style="display: none" id="8">
           <label for="puesto">Puesto 8</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
-              <option value="1">Ejecutivo</option>
-              <option value="2">Directores</option>
-              <option value="3">Doctores</option>
+              <option value="1">Director Ejecutivo</option>
+              <option value="2">Directores De Aréas</option>
+              <option value="3">Encargados De Departamentos</option>
+              <option value="4">Enc. De Secciones y Coordinadores</option>
+              <option value="5">Analistas</option>
+              <option value="6">Técnicos</option>
+              <option value="7">Profesionales</option>
+              <option value="8">Otros</option>
             </optgroup>
           </select>
           <label for="nombre">Nombres</label>
           <input type="text" name="nombre" />
           <label for="apellido">Apellidos</label>
           <input type="text" name="apellido" />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="desayuno"
+              id="checkDesayuno8"
+              onclick="activar('rellenarDesayuno8')"
+              checked
+            />
+            <label for="desayuno" id="">Desayuno</label>
+          </div>
+          <input type="text" name="desayuno" id="rellenarDesayuno8" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="comida"
+              id="checkComida2"
+              onclick="activar('rellenarComida8')"
+              checked
+            />
+            <label for="comida" id="">Comida</label>
+          </div>
+          <input type="text" name="comida" id="rellenarComida8" readonly />
+
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkCena8"
+              onclick="activar('rellenarCena8')"
+              checked
+            />
+            <label for="cena" id="">Cena</label>
+          </div>
+          <input type="text" name="cena" id="rellenarCena8" readonly />
+          <div class="radio modificacion">
+            <input
+              type="checkbox"
+              name="cena"
+              id="checkAlojamiento8"
+              onclick="activar('rellenarAlojamiento8')"
+              checked
+            />
+            <label for="cena" id="">Alojamiento</label>
+          </div>
+          <input type="text" name="cena" id="rellenarAlojamiento8" readonly />
         </div>
         <button class="generar" onclick="convpdf()">Generar PDF</button>
       </form>
