@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
     <script src="js/selectr.js"></script>
   </head>
   <body>
@@ -51,7 +50,7 @@
           <option id="des" value="4">Más de 4</option>
         </select>
         <!-- PUESTOS QUE SE OCUPARAN -->
-        <div class="persona 1" style="display: none" id="1">
+        <div class="persona perso1" style="display: none" id="1">
           <label for="puesto">Puesto 1</label>
           <select name="puesto" onchange="dinero('1')" id="ocupacion">
             <optgroup label="Seleccione un Puesto">
@@ -121,19 +120,20 @@
             type="text"
             name="Alojamiento"
             id="rellenarAlojamiento"
-            readonly>
-          
-          <div class="radio modificacion" >
+            readonly
+          />
+
+          <div class="radio modificacion">
             <label for="">Total:</label>
           </div>
-          <input type="text" name="" id="resultado">
+          <input type="text" name="" id="resultado" />
         </div>
 
         <!--PERSONA 2  -->
 
-        <div class="persona 2" style="display: NONE" id="2">
+        <div class="persona perso2" style="display: NONE" id="2">
           <label for="puesto">Puesto 2</label>
-          <select name="puesto" id="">
+          <select name="puesto" id="ocupacion2" onchange="dinero('')">
             <optgroup label="Seleccione un Puesto">
               <option value="0" selected disabled hidden>
                 Selecione un Puesto
@@ -195,7 +195,7 @@
               onclick="activar('rellenarAlojamiento2')"
               checked
             />
-            <label for="Alojamiento2" id="">Alojamiento2</label>
+            <label for="Alojamiento2" id="">Alojamiento</label>
           </div>
           <input
             type="text"
@@ -207,7 +207,7 @@
 
         <!--PERSONA 3  -->
 
-        <div class="persona 3" style="display: NONE" id="3">
+        <div class="persona perso3" style="display: NONE" id="3">
           <label for="puesto">Puesto 3</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
@@ -283,7 +283,7 @@
 
         <!-- PERSONA 4 -->
 
-        <div class="persona 4" style="display: NONE" id="4">
+        <div class="persona perso4" style="display: NONE" id="4">
           <label for="puesto">Puesto 4</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
@@ -359,7 +359,7 @@
 
         <!-- SECCION 5 -->
 
-        <div class="persona 5" style="display: none" id="5">
+        <div class="persona perso5" style="display: none" id="5">
           <label for="puesto">Puesto 5</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
@@ -430,7 +430,7 @@
 
         <!-- SECCION 6 -->
 
-        <div class="persona 6" style="display: none" id="6">
+        <div class="persona perso6" style="display: none" id="6">
           <label for="puesto">Puesto 6</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
@@ -501,11 +501,11 @@
 
         <!-- SECCION 7 -->
 
-        <div class="persona 7" style="display: none" id="7">
+        <div class="persona perso7" style="display: none" id="7">
           <label for="puesto">Puesto 7</label>
-          <select name="puesto" >
-            <optgroup label="Seleccione un Puesto" >
-              <option value="0" selected disabled hidden >
+          <select name="puesto">
+            <optgroup label="Seleccione un Puesto">
+              <option value="0" selected disabled hidden>
                 Selecione un Puesto
               </option>
               <option value="1">Director Ejecutivo</option>
@@ -557,7 +557,7 @@
             <label for="cena" id="">Cena</label>
           </div>
           <input type="text" name="cena" id="rellenarCena7" readonly />
-          
+
           <div class="radio modificacion">
             <input
               type="checkbox"
@@ -569,12 +569,11 @@
             <label for="cena" id="">Cena</label>
           </div>
           <input type="text" name="cena" id="rellenarAlojamiento7" readonly />
-          
         </div>
 
         <!-- SECCION 8 -->
 
-        <div class="persona 8" style="display: none" id="8">
+        <div class="persona perso8" style="display: none" id="8">
           <label for="puesto">Puesto 8</label>
           <select name="puesto" id="">
             <optgroup label="Seleccione un Puesto">
